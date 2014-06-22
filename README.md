@@ -4,9 +4,9 @@
 ## Preparing
 ========================================================
 
-1 download the file data.zip
-2 download the file run_analysis.R into you workspace
-3 extract data.zip into works into you workspace
+1. download the file data.zip
+2. download the file run_analysis.R into you workspace
+3. extract data.zip into works into you workspace
 
 ## Run
 ========================================================
