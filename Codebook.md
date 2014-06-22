@@ -4,9 +4,9 @@
 ## Cookbook
 ========================================================
 
-1 Merges testing and measuring training
-2 Calculates mean and standard deviation for each measurement by subject and active
-3 Calculates mean and standard deviation for each measurement by active
+1. Merges testing and measuring training
+2. Calculates mean and standard deviation for each measurement by subject and active
+3. Calculates mean and standard deviation for each measurement by active
 
 ## total_accelerometer_x: measurement total signal from the accelerometer on the the x axis by subject and active
 ========================================================
