@@ -1,0 +1,17 @@
+classification <- readRDS("Source_Classification_Code.rds")
+classification$EI.Sector <- tolower(classification$EI.Sector)
+classification$SCC.Level.One <- tolower(classification$SCC.Level.One)
+classification <- classification[grepl("coal",classification$EI.Sector),]
+classification <- classification[grepl("combustion",classification$SCC.Level.One),]
+pm25 <- readRDS("summarySCC_PM25.rds")
+pm25 <- merge(pm25,classification)
+pm25$year <- factor(pm25$year)
+pm25 <- tapply(pm25$Emissions,pm25$year,sum)
+years <- as.integer(names(pm25))
+pm25 <- round(pm25 / 1000)
+png(filename = "plot4.png",width = 480, height = 480)
+plot(years, pm25, main = "USA PM2.5 Emission by Coal Combustion", xlab = "Years",  ylab = "PM2.5 (10³ tons)", type= "l")
+dev.off()
+rm(pm25)
+rm(years)
+rm(classification)

@@ -1,0 +1,10 @@
+pm25 <- readRDS("summarySCC_PM25.rds")
+pm25 <- pm25[pm25$fips == 24510,]
+pm25$year <- factor(pm25$year)
+pm25 <- tapply(pm25$Emissions,pm25$year,sum)
+years <- as.integer(names(pm25))
+png(filename = "plot2.png",width = 480, height = 480)
+plot(years, pm25, main = "Baltimore PM2.5 Emission", xlab = "Years",  ylab = "PM2.5 (tons)", type= "l")
+dev.off()
+rm(pm25)
+rm(years)
